@@ -1,9 +1,305 @@
+<!-- 
+  Hello 😊.
+
+  This template is designed and developed by Nisar Hassan Naqvi
+  for anyone to use for free or customize the way they like.
+
+  Github Repo: https://github.com/nisarhassan12/portfolio-template/
+  My Website: https://nisar.dev
+
+  For business & inquires, contact me => syednisarhassan12@gmail.com
+-->
+
+<!--
+  Follow the instructions written in comments to create your stunning portfolio
+-->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Eleros Vecchio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+
+  <!-- Put your site title here -->
+  <title>
+    Sam Hansen | Portfolio
+  </title>
+
+  <meta name="description" content="Video Game Developer">
+  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
+  <meta name="keywords" content="Sam Hansen, game, video game, development, programming" />
+  <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
-<p>Hi! Main Page</p>
+
+  <!-- ***** Header ***** -->
+
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Resume</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://www.linkedin.com/in/sam-o-hansen/" target="_blank" class="nav__link">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          <!-- Replace the following name with your name -->
+          <span>Sam Hansen</span>
+        </h1>
+        <!-- Put a small paragraph about yourself -->
+        <p>Video Game Programming and Development</p>
+        <a href="#contact" class="btn btn--pink">Contact Me!</a>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ***** Work ***** -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Work</h2>
+        <div class="work__boxes">
+
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>PSYCHODELICA</h3>
+              <p>
+                A work in progress <b>psychedelic 3D bullet hell shoot-em-up</b> for desktop platforms.
+                Players take control of a spaceship and have to dodge enemy fire, destroy enemy ships, and
+                take down incredible bosses. This is a solo project with me assuming most development roles.
+              </p>
+              <ul class="work__list">
+                <li>Created with <b>Godot Engine</b></li>
+                <li>Heavy use of <b>shaders</b> written using <b>HLSL</b></li>
+              </ul>
+
+              <!--
+              <div class="work__links">
+                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div> -->
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Curve Pong</h3>
+              <p>
+                A version of pong with additional mechanics and improved graphics,
+                created for <b>Ludum Dare 51</b>. I worked on this game as part of
+                a team of 4. Contributions were tracked through <b>Git</b>.
+                My contributions include:
+              </p>
+              <ul class="work__list">
+                <li>Implemented an <b>Event Manager</b> to support the script architecture</li>
+                <li>Implemented <b>Post Processing Effects</b> and additional VFX using Shaders</li>
+                <li>Designed and Implemented User Interfaces, including the <b>Title Screen, Game Over Screen, and Scoreboard</b></li>
+                <li>Created additional Sound Effects for the game, such as the Explosion and Curveball effects</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://dawdlegames.itch.io/curve-pong" class="link__text" target="_blank">
+                  Play Game <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/notpresident35/LD51" target="_blank">
+                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-2.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Dialogue System</h3>
+              <p>
+                A <b>JSON-based dialogue system</b> created for an in-progress detective game.
+                Supports multiple languages and accessibility settings. It features:
+              </p>
+              <ul class="work__list">
+                <li>Branching dialogue paths</li>
+                <li>Multiple choice questions for the player</li>
+                <li>Player can question the speaker about any item in the game</li>
+                <li>Native BBCode support allowing for colored or animated text</li>
+                <li>Supports multiple languages, fonts (dyslexic, etc), and multiple font sizes</li>
+              </ul>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Reflection</h3>
+              <p>
+                A 2D sidescrolling platformer created in a team for a high school game design class at USC.
+                My contributions include:
+              </p>
+              <ul class="work__list">
+                <li>Programming most main game mechanics</li>
+                <li>Worked on collision system for level</li>
+                <li>Implement artwork into game (level art and parallax backgrounds)</li>
+              </ul>
+
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Various Custom Maps</h3>
+              <p>
+                Various custom maps created in the Hammer Editor for Counter Strike and
+                Team Fortress 2. One was even featured on the front page of the Counter
+                Strike workshop page.
+              </p>
+              <ul class="work__list">
+                <li>Greyboxed and prototyped level layouts and designs</li>
+                <li>Texture and polish surfaces</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://steamcommunity.com/id/AlienRadar/myworkshopfiles/" class="link__text" target="_blank">
+                  View Workshop Page <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2>About Me</h2>
+        <div class="about__content">
+          <div class="about__text">
+            <!-- Replace the below paragraph with info about yourself -->
+            <p>
+              Heya~ I'm Sam Hansen (she/her). I'm a video game programmer/developer.
+              I am primarily a programmer, but I work and have experience in most fields
+              of game development. I love learning new things and love to take on challenging
+              projects.
+              <br><br>
+              I am currently studying at UC Irvine for a Bachelor of Science in Computer Science
+              with a specialization in Computer Networks. I am expected to graduate in Spring 2024.
+              <br><br>
+              I have been playing video games for most of my life. I am typically drawn to first person
+              shooters, but I play a wide variety of games. Some of my current favorites are Citizen Sleeper,
+              Valorant, ULTRAKILL, and Gloomwood.
+            </p>
+            <!--  I love trying out and learning new things, and I often
+              find myself lost in a rabbit hole of YouTube tutorials and learning resources.-->
+            <!-- Provide a link to your resume -->
+            <a href="#" class="btn">Resume</a>
+          </div>
+
+          <div class="about__photo-container">
+            <!-- Add a nice photo of yourself -->
+            <img class="about__photo" src="./images/picrew.png" alt="My picrew avatar" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ***** Contact ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Contact Me</h2>
+      <div class="contact__info">
+        <p>
+          Are you looking for a game developer to work on your team? <br>
+
+          Email me at sam@samhansen.com
+        </p>
+        <!-- Replace the email with yours -->
+        <a href="mailto:sam@samhansen.com" class="btn">Email Me!</a>
+      </div>
+
+      <!-- Update the links to point to your accounts -->
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/sam-o-hansen/" title="Link to Linkedin Profile" target="_blank">
+            <img src="./images/linkedin.svg" class="footer__social-image" alt="Linkedin">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://twitter.com/elerosv/" title="Link to Twitter Profile"  target="_blank">
+            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/ElerosVecchio/" title="Link to Github Profile" target="_blank">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ***** Footer ***** -->
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+
+      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
+      <p>
+        &copy; 2020 - Template designed & developed by <a href="https://nisar.dev" class="link">Nisar</a>.
+      </p>
+      <div class="footer__github-buttons">
+        <iframe
+          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
+          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
+        </iframe>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+  </a>
+  <script src="./index.js"></script>
 </body>
+
 </html>
