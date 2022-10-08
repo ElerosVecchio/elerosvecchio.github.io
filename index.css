@@ -349,17 +349,23 @@ body:not(.user-is-tabbing) a:focus {
 .nav__items {
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .nav__item:not(:last-child) {
     margin-right: var(--gutter-medium);
 }
 
-@media(max-width: 500px) {
-    .nav {
-        justify-content: center;
+@media (max-width: 500px) {
+    .header__text {
+      left: 0;
     }
-}
+    
+    .nav__items {
+      flex-wrap: wrap;
+      width: 80vw;
+    }
+  }
 
 @media(max-width: 400px) {
     .nav__item:not(:last-child) {
@@ -409,8 +415,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)),url("./images/header.jpg");
     height: 100vh;
     background-size: cover;
     background-position: center;
