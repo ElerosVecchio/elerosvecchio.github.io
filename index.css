@@ -320,6 +320,23 @@ body:not(.user-is-tabbing) a:focus {
     transition: all .4s;
 }
 
+.to-projects {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: var(--pink);
+    border-radius: 50%;
+    z-index: 10;
+    transition: all .4s;
+}
+
 .back-to-top__image {
     height: 70%;
 }
@@ -358,7 +375,8 @@ body:not(.user-is-tabbing) a:focus {
 
 @media (max-width: 500px) {
     .header__text {
-      left: 0;
+      /*left: 0;*/
+      text-align: left;
     }
     
     .nav__items {
@@ -419,6 +437,7 @@ body:not(.user-is-tabbing) a:focus {
     right: 0;
     transform: translateX(calc((100% - 100vw) / 2));
     object-fit: cover;
+    overflow-x: hidden;
 }
 
 /* --------------------------------------- */
@@ -452,9 +471,9 @@ body:not(.user-is-tabbing) a:focus {
         text-align: center;
     }
 
-    .header__text p {
+    /*.header__text p {
         transform: scale(.8);
-    }
+    }*/
 }
 
 /* --------------------------------------- */
