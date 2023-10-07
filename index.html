@@ -68,7 +68,7 @@
             <span>sam hansen</span>
           </h1>
           <!-- Put a small paragraph about yourself -->
-          <p>Game Programming</p>
+	  <p>Game Programming</p>
           <a href="#contact" class="btn btn--pink">Contact Me!</a>
         </div>
       <a href="#projects" class="to-projects" title="To Projects">
@@ -87,6 +87,35 @@
         <div class="work__boxes">
 
           <!-- Each div with the work__box class is a project. -->
+          <div class="work__box" id="ether">
+            <div class="work__text">
+              <h3>Project Ether</h3>
+              <p>
+	      A <b>3D action stealth game</b> with a heavy focus on <b>proper minority representation</b>. Created with Unreal Engine 5 with a team of over <b>41 people</b>. I was the AI programmer, Perforce administrator, and Lead Programmer for a short time.
+              </p>
+              <ul class="work__list">
+		      <li>Used <b>Unreal Behavior Trees and Blueprints</b> to implement the Guard AI</li>
+		<li>Created <b>AI Patrol Path editor tools</b> which <b>sped up the level design workflow</b></li>
+		<li><b>Set up, hosted, and administrated</b> the team's private <b>Perforce</b> server.</li>
+		<li>Used <b>Airtable</b> for task delegation</li>
+              </ul>
+
+              <!-- <div class="work__links">
+                <a href="https://gagejohnson.itch.io/sling-and-fling" target="_blank" class="link__text">
+                    Play Game <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/GageGames/Fall2022VGDC" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+	      </div> -->
+	    </div>
+            <div class="work__image-box">
+              <video class="work__image" autoplay muted loop>
+                <source src="./images/ether.mp4" type="video/mp4">
+                Cannot Play Video: Project Ether Early Gameplay
+              </video>
+            </div>
+          </div>
 
           <div class="work__box" id="snf">
             <div class="work__text">
@@ -98,10 +127,9 @@
                 Video Game Development Club.
               </p>
               <ul class="work__list">
-                <li>Worked as part of the programming team using <b>C# in Unity</b></li>
-                <li><b>Prototyped</b> game mechanics and then polish for production</li>
+		<li><b>UI implementation</b> in Unity</li>
                 <li><b>Collaborated and communicated</b> with 13 people across 5 departments</li>
-                <li>Used <b>Trello, Git, and Design Milestones</b> for efficient development</li>
+                <li>Used <b>Trello and Git</b> for efficient management and development</li>
               </ul>
 
               <div class="work__links">
@@ -131,9 +159,8 @@
                 My contributions include:
               </p>
               <ul class="work__list">
-                <li>Implemented an <b>Event Manager</b> to support the script architecture</li>
-                <li>Implemented <b>Post Processing Effects</b> and additional VFX/Shaders</li>
-                <li>Designed and Implemented User Interfaces, including the <b>Title Screen, Game Over Screen, and Scoreboard</b></li>
+                <li>Implemented core systems that were the foundation for the rest of the game</li>
+		<li><b>Designed, Implemented, and Styled User Interfaces</b> including the Title Screen, Game Over Screen, and Scoreboard</li>
                 <li>Created additional Sound Effects for the game, such as the Explosion, Dash, and Curveball effects</li>
               </ul>
 
@@ -156,45 +183,23 @@
 
           <div class="work__box" id="dialogue">
             <div class="work__text">
-              <h3>Dialogue System</h3>
+              <h3>Detective Game (Unreleased)</h3>
               <p>
-                A <b>JSON-based dialogue system</b> created for an in-progress detective game.
-                Supports multiple languages and accessibility settings. It features:
+                A <b>dialogue and interrogation system</b> created for an in-development detective game.
+                It features:
               </p>
               <ul class="work__list">
+                <li>Accessibility support such as localization and font customization</li>
                 <li>Branching dialogue paths</li>
                 <li>Multiple choice questions for the player</li>
                 <li>Player can question the speaker about any item in the game</li>
                 <li>Native BBCode support allowing for colored or animated text</li>
-                <li>Supports multiple languages, fonts (dyslexic, etc), and multiple font sizes</li>
               </ul>
             </div>
             <div class="work__image-box">
               <video class="work__image" autoplay muted loop>
                 <source src="./images/dialogue.mp4" type="video/mp4">
                 Cannot Play Video: Sample Dialogue for the Dialogue System
-              </video>
-            </div>
-          </div>
-
-          <div class="work__box" id="reflection">
-            <div class="work__text">
-              <h3>Reflection</h3>
-              <p>
-                A 2D sidescrolling platformer created in a team for a high school game design class at USC.
-                My contributions include:
-              </p>
-              <ul class="work__list">
-                <li>Programming most main game mechanics</li>
-                <li>Worked on collision system for levels</li>
-                <li>Implement artwork into game (level art and parallax backgrounds)</li>
-              </ul>
-
-            </div>
-            <div class="work__image-box">
-              <video class="work__image" autoplay muted loop>
-                <source src="./images/reflection.mp4" type="video/mp4">
-                Cannot Play Video: Reflection Gameplay
               </video>
             </div>
           </div>
@@ -208,8 +213,8 @@
                 Strike workshop page.
               </p>
               <ul class="work__list">
-                <li>Greyboxed and prototyped level layouts and designs</li>
-                <li>Playtesting and quick iterations</li>
+                <li>Organized and oversaw playtesting sessions</li>
+                <li>Rapid iteration based on testing and player feedback</li>
               </ul>
 
               <div class="work__links">
@@ -247,7 +252,7 @@
               with a specialization in Computer Networks. I am expecting to graduate in Spring 2024.
               <br><br>
               I have been playing video games for most of my life. I try to play a wide variety of games, but most of my favorites are indie games. Some of my favorites are Citizen Sleeper,
-              UNDERTALE/deltarune, Outer Wilds, Gloomwood, Return of the Obra Dinn, and Elite: Dangerous.
+              UNDERTALE, deltarune, Outer Wilds, Gloomwood, Return of the Obra Dinn, and Elite: Dangerous.
             </p>
             <!-- Provide a link to your resume -->
             <a href="Sam_Hansen_Resume.pdf" target="_blank" class="btn">Resume</a>
