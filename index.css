@@ -1,0 +1,47 @@
+body {
+	background-color: black;
+}
+
+.header {
+	background-color: grey;
+}
+
+.nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.nav_list {
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+}
+
+.nav_item {
+	margin-right: 10px;
+}
+
+.nav_img {
+	width: 30px;
+	height: 30px;
+}
+
+.social_list {
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+}
+
+.socials {
+	margin: auto;
+	width: 350px;
+}
+
+.social_item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.social_img {
+	width: 50px;
+	height: 50px;
+}
