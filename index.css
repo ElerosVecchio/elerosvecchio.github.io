@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-color: beige;
 }
 
 .header {
@@ -26,6 +26,10 @@ body {
 	height: 30px;
 }
 
+.nav_img:hover {
+	transform: scale(1.2);
+}
+
 .social_list {
 	display: flex;
 	list-style: none;
@@ -44,4 +48,22 @@ body {
 .social_img {
 	width: 50px;
 	height: 50px;
+}
+
+.social_img:hover {
+	transform: scale(1.15);
+}
+
+.project_list {
+	list-style: none;
+}
+
+.project_button {
+	text-align: center;
+	vertical-align: middle;
+	background-color: grey;
+}
+
+.project_button:hover {
+
 }
