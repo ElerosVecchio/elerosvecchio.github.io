@@ -4,10 +4,18 @@ body {
 
 .header {
 	background-color: grey;
+	height: 4rem;
+}
+
+.row {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 .nav {
-	display: flex;
+	display: inline-flex;
 	justify-content: flex-end;
 }
 
@@ -62,6 +70,12 @@ body {
 	text-align: center;
 	vertical-align: middle;
 	background-color: grey;
+}
+
+.header_img {
+	object-fit: contain;
+	max-width: 100%;
+	display: inline-block;
 }
 
 .project_button:hover {
