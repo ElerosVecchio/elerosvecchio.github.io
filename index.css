@@ -73,6 +73,7 @@ body {
 }
 
 .header_img {
+	height: inherit;
 	object-fit: contain;
 	max-width: 100%;
 	display: inline-block;
