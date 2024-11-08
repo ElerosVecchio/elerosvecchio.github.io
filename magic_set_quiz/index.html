@@ -11,13 +11,16 @@
 	<link rel="stylesheet" href="index.css" />
 </head>
 <body>
-	<a href="../" title="Home">Back Home</a>
+	<div class="headline">
+	<a id="home" href="../" title="Home">Home</a>
 	<h1>Magic Set Quiz</h1>
-	<h3>by elerosv</h3>
-	<p>This "quiz" is intended as a resource to practice identifying Magic: The Gathering set symbols. It only includes paper sets printed in English.<br><br>
+	<p>This "quiz" is intended as a resource to practice identifying Magic: The Gathering set symbols. It only includes paper sets with English printings.<br><br>
 	<b>Last updated November 6, 2024</b><br><br>
-	This quiz is not associated with Wizards of the Coast, Hasbro, or the Magic: The Gathering team. The set symbols are owned by Wizards of the Coast. The set symbol images used here are from <a href="https://keyrune.andrewgioia.com/" title="Keyrune">Keyrune, by Andrew Gioia</a>, licensed under the <a href="https://opensource.org/license/GPL-3.0" title="GPL 3.0 License">GPL 3.0 License</a>.</p>
+	This quiz is not associated with Wizards of the Coast, Hasbro, or the Magic: The Gathering team. The set symbols are owned by Wizards of the Coast. The set symbol images used here are from <a href="https://keyrune.andrewgioia.com/" title="Keyrune">Keyrune, by Andrew Gioia</a>, which is licensed under the <a href="https://opensource.org/license/GPL-3.0" title="GPL 3.0 License">GPL 3.0 License</a>.</p>
+	</div>
+	<div id="quiz_content">
 	<button id="start_button" onclick="start_quiz()">Start Quiz!</button>
+	</div>
 	
 	
 	
@@ -315,6 +318,12 @@
 	let current_index = 0;
 	let score = 0;
 	
+	const quiz_div = document.getElementById("quiz_content");
+	
+	const progress_text = document.createElement("B");
+	progress_text.setAttribute("id", "progress_text");
+	progress_text.textContent = `${current_index}/${set_list.length}`;
+	
 	const image_box = document.createElement("IMG");
 	image_box.setAttribute("class", "set_image");
 	
@@ -323,6 +332,7 @@
 	enter_button.onclick = function() {answer_submitted();};
 	
 	const correct_answer = document.createElement("B");
+	correct_answer.setAttribute("id", "correct_answer_box");
 	
 	const text_box = document.createElement("INPUT");
 	text_box.setAttribute("type","text");
@@ -346,10 +356,12 @@
 		current_index = 0;
 		const startbutton = document.getElementById("start_button");
 		startbutton.remove();
-		document.body.appendChild(image_box);
-		document.body.appendChild(correct_answer);
-		document.body.appendChild(text_box);
-		document.body.appendChild(enter_button);
+		progress_text.textContent = `${current_index}/${set_list.length}`;
+		quiz_div.appendChild(progress_text);
+		quiz_div.appendChild(image_box);
+		quiz_div.appendChild(correct_answer);
+		quiz_div.appendChild(text_box);
+		quiz_div.appendChild(enter_button);
 		new_question();
 	}
 	
@@ -367,9 +379,9 @@
 		}
 		if (is_correct == true) {
 			score++;
-			correct_answer.style.color = "green";
+			correct_answer.style.backgroundColor = "lightgreen";
 		} else {
-			correct_answer.style.color = "red";
+			correct_answer.style.backgroundColor = "lightcoral";
 		}
 		setTimeout(function() {
 			if (current_index == set_list.length - 1) {
@@ -382,6 +394,7 @@
 	}
 	
 	function new_question() {
+		progress_text.textContent = `${current_index}/${set_list.length}`;
 		correct_answer.style.display = "none";
 		image_box.setAttribute("src", `images/${set_list[current_index][1]}.svg`);
 	}
