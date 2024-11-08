@@ -20,7 +20,7 @@
 	<b>Type the set name, not the three letter code</b></p>
 	</div>
 	<div id="quiz_content">
-	<button id="start_button" onclick="start_quiz()">Start Quiz!</button>
+	<button id="start_button" onclick="first_start()">Start Quiz!</button>
 	</div>
 	
 	
@@ -352,12 +352,16 @@
 		}
 	}
 	
+	function first_start() {
+		const startbutton = document.getElementById("start_button");
+		startbutton.remove();
+		start_quiz();
+	}
+	
 	function start_quiz() {
 		shuffle(set_list);
 		score = 0;
 		current_index = 0;
-		const startbutton = document.getElementById("start_button");
-		startbutton.remove();
 		progress_text.textContent = `${current_index}/${set_list.length}`;
 		quiz_div.appendChild(progress_text);
 		quiz_div.appendChild(image_box);
@@ -415,6 +419,10 @@
 		const final_score = document.createElement("h2");
 		final_score.textContent = `${score}/${set_list.length}`;
 		quiz_div.appendChild(final_score);
+		const retry_button = document.createElement("BUTTON");
+		retry_button.textContent = "Retry";
+		retry_button.onclick = function() {start_quiz();};
+		quiz_div.appendChild(retry_button);
 	}
 	</script>
 </body>
