@@ -261,19 +261,19 @@
 		["Kamigawa: Neon Dynasty Commander Decks (NEC)", "nec", ["Kamigawa: Neon Dynasty Commander Decks", "Kamigawa: Neon Dynasty Commander"]],
 		["Streets of New Capenna (SNC)", "snc", ["Streets of New Capenna"]],
 		["Streets of New Capenna Commander Decks (NCC)", "ncc", ["Streets of New Capenna Commander Decks", "Streets of New Capenna Commander"]],
-		["Commander Legends: Battle for Baldur's Gate (CLB)", "clb", ["Commander Legends: Battle for Baldur's Gate", "Commander Legends: Baldur's Gate", "Baldur's Gate Commander", "Battle for Baldur's Gate", "Battle for Baldur's Gate Commander"]],
+		["Commander Legends: Battle for Baldur's Gate (CLB)", "clb", ["Commander Legends: Battle for Baldur's Gate", "Commander Legends: Baldur's Gate", "Baldur's Gate Commander", "Battle for Baldur's Gate", "Battle for Baldur's Gate Commander", "Baldur's Gate"]],
 		["Double Masters 2022 (2X2)", "2x2", ["Double Masters 2022"]],
 		["Dominaria United (DMU)", "dmu", ["Dominaria United"]],
 		["Dominaria United Commander Decks (DMC)", "dmc", ["Dominaria United Commander Decks", "Dominaria United Commander"]],
 		["Unfinity (UNF)", "unf", ["Unfinity"]],
-		["Warhammer 40,000 Commander Decks (40K)", "40k", ["Warhammer 40,000 Commander Decks", "Warhammer 40,000 Commander", "Warhammer Commander Decks", "Warhammer Commander", "Warhammer 40k", "Warhammer 40,000", "Warhammer 40k Commander", "Warhammer 40,000 Commander", "40k", "40,000", "40k Commander", "40,000 Commander"]],
+		["Warhammer 40,000 Commander Decks (40K)", "40k", ["Warhammer 40,000 Commander Decks", "Warhammer 40,000 Commander", "Warhammer Commander Decks", "Warhammer Commander", "Warhammer 40k", "Warhammer 40,000", "Warhammer 40k Commander", "Warhammer 40,000 Commander", "40k", "40,000", "40k Commander", "40,000 Commander", "Warhammer"]],
 		["Game Night Free-for-All (GN3)", "gn3", ["Game Night Free-for-All"]],
 		["The Brother's War (BRO)", "bro", ["The Brother's War", "Brother's War"]],
 		["The Brother's War Retro Artifacts (BRR)", "brr", ["The Brother's War Retro Artifacts", "Retro Artifacts", "Retro Frame Artifacts", "The Brother's War Retro Frame Artifacts", "Brother's War Retro Artifacts", "Brother's War Retro Frame Artifacts"]],
 		["The Brother's War Commander Decks (BRC)", "brc", ["The Brother's War Commander Decks", "The Brother's War Commander", "Brother's War Commander Decks", "Brother's War Commander"]],
 		["Transformers (BOT)", "bot", ["Transformers"]],
-		["Jumpstart 2022 (J22)", "j22", ["Jumpstart 2022"]],
-		["Starter Commander Decks (SCD)", "scd", ["Starter Commander Decks", "Starter Commander"]],
+		//["Jumpstart 2022 (J22)", "j22", ["Jumpstart 2022"]],
+		//["Starter Commander Decks (SCD)", "scd", ["Starter Commander Decks", "Starter Commander"]],
 		["Dominaria Remastered (DMR)", "dmr", ["Dominaria Remastered"]],
 		["Phyrexia: All Will Be One (ONE)", "one", ["Phyrexia: All Will Be One", "All Will Be One"]],
 		["Phyrexia: All Will Be One Commander Decks (ONC)", "onc", ["Phyrexia: All Will Be One Commander Decks", "Phyrexia: All Will Be One Commander", "All Will Be One Commander Decks", "All Will Be One Commander"]],
@@ -283,7 +283,7 @@
 		["March of the Machine: The Aftermath (MAT)", "mat", ["March of the Machine: The Aftermath"]],
 		["The Lord of The Rings: Tales of Middle-Earth (LTR)", "ltr", ["The Lord of The Rings: Tales of Middle-Earth", "LoTR: Tales of Middle-Earth", "The Lord of the Rings", "Lord of the Rings", "LoTR", "Tales of Middle-Earth"]],
 		//["The Lord of The Rings: Tales of Middle-Earth Commander / Holiday Release (LTC)", "ltc", ["The Lord of The Rings: Tales of Middle-Earth Commander Decks", "LoTR: Tales of Middle-Earth Commander Decks", "The Lord of the Rings Commander Decks", "Lord of the Rings Commander Decks", "LoTR Commander Decks", "Tales of Middle-Earth Commander Decks", "The Lord of The Rings: Tales of Middle-Earth Commander", "LoTR: Tales of Middle-Earth Commander", "The Lord of the Rings Commander", "Lord of the Rings Commander", "LoTR Commander", "Tales of Middle-Earth Commander", "The Lord of the Rings: Holiday Release", "Lord of the Rings: Holiday Release", "LoTR: Holiday Release"]],
-		["Commander Masters (CMM)", "cmm", ["Commander Masters"]],
+		//["Commander Masters (CMM)", "cmm", ["Commander Masters"]],
 		["Wilds of Eldraine (WOE)", "woe", ["Wilds of Eldraine"]],
 		["Wilds of Eldraine Enchanting Tales (WOT)", "wot", ["Wilds of Eldraine Enchanting Tales", "Enchanting Tales"]],
 		["Wilds of Eldraine Commander Decks (WOC)", "woc", ["Wilds of Eldraine Commander Decks", "Wilds of Eldraine Commander"]],
@@ -344,6 +344,12 @@
 		}
 	});
 	
+	const retry_button = document.createElement("BUTTON");
+	retry_button.textContent = "Retry";
+	retry_button.onclick = function() {restart();};
+	
+	const final_score = document.createElement("h2");
+	
 	function shuffle(array) {
 		for (let i = array.length - 1; i > 0; i--) {
 			const random = Math.floor(Math.random() * (i + 1));
@@ -355,6 +361,17 @@
 	function first_start() {
 		const startbutton = document.getElementById("start_button");
 		startbutton.remove();
+		quiz_div.appendChild(progress_text);
+		quiz_div.appendChild(correct_answer);
+		quiz_div.appendChild(image_box);
+		quiz_div.appendChild(text_box);
+		quiz_div.appendChild(enter_button);
+		start_quiz();
+	}
+	
+	function restart() {
+		retry_button.remove();
+		final_score.remove();
 		start_quiz();
 	}
 	
@@ -363,11 +380,6 @@
 		score = 0;
 		current_index = 0;
 		progress_text.textContent = `${current_index}/${set_list.length}`;
-		quiz_div.appendChild(progress_text);
-		quiz_div.appendChild(correct_answer);
-		quiz_div.appendChild(image_box);
-		quiz_div.appendChild(text_box);
-		quiz_div.appendChild(enter_button);
 		new_question();
 	}
 	
@@ -416,12 +428,8 @@
 		correct_answer.style.display = "none";
 		text_box.style.display = "none";
 		enter_button.style.display = "none";
-		const final_score = document.createElement("h2");
 		final_score.textContent = `${score}/${set_list.length}`;
 		quiz_div.appendChild(final_score);
-		const retry_button = document.createElement("BUTTON");
-		retry_button.textContent = "Retry";
-		retry_button.onclick = function() {start_quiz();};
 		quiz_div.appendChild(retry_button);
 	}
 	</script>
