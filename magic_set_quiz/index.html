@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<link rel="icon" type="image/x-icon" href="./portfolio/images/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="../portfolio/images/favicon.ico" />
 
 	<title>Magic Set Quiz</title>
 
@@ -17,7 +17,7 @@
 	<p>This "quiz" is intended as a resource to practice identifying Magic: The Gathering set symbols. It only includes paper sets printed in English.<br><br>
 	<b>Last updated November 6, 2024</b><br><br>
 	This quiz is not associated with Wizards of the Coast, Hasbro, or the Magic: The Gathering team. The set symbols are owned by Wizards of the Coast. The set symbol images used here are from <a href="https://keyrune.andrewgioia.com/" title="Keyrune">Keyrune, by Andrew Gioia</a>, licensed under the <a href="https://opensource.org/license/GPL-3.0" title="GPL 3.0 License">GPL 3.0 License</a>.</p>
-	<button>Start Quiz!</button>
+	<button id="start_button" onclick="start_quiz()">Start Quiz!</button>
 	
 	
 	
@@ -136,7 +136,7 @@
 		["Gatecrash (GTC)", "gtc", ["Gatecrash"]],
 		["Duel Decks: Sorin vs. Tibalt (DDK)", "ddk", ["Duel Decks: Sorin vs. Tibalt", "Duel Decks: Sorin v. Tibalt", "Sorin v. Tibalt", "Sorin vs. Tibalt"]],
 		["Dragon's Maze (DGM)", "dgm", ["Dragon's Maze"]],
-		["Modern Masters (MMA)", "mma" ["Modern Masters"]],
+		["Modern Masters (MMA)", "mma", ["Modern Masters"]],
 		["Magic 2014 (M14)", "m14", ["Magic 2014", "Core Set 2014"]],
 		["From the Vault: Twenty (V13)", "v13", ["From the Vault: Twenty", "FTV: Twenty"]],
 		["Duel Decks: Heroes vs. Monsters (DDL)", "ddl", ["Duel Decks: Heroes vs. Monsters", "Duel Decks: Heroes v. Monsters", "Heroes v. Monsters", "Heroes vs. Monsters"]],
@@ -225,7 +225,7 @@
 		["Throne of Eldraine (ELD)", "eld", ["Throne of Eldraine"]],
 		["Ponies: The Galloping (PTG)", "ptg", ["Ponies: The Galloping"]],
 		["Game Night 2019 (GN2)", "gn2", ["Game Night 2019"]],
-		["Secret Lair Drop (SLD)", "pmei", ["Secret Lair Drop", "Secret Lair"]],
+		["Secret Lair Drop (SLD)", "sld", ["Secret Lair Drop", "Secret Lair"]],
 		["Theros Beyond Death (THB)", "thb", ["Theros Beyond Death"]],
 		["Unsanctioned (UND)", "und", ["Unsanctioned"]],
 		["Ikoria: Lair of Behemoths (IKO)", "iko", ["Ikoria: Lair of Behemoths"]],
@@ -242,7 +242,7 @@
 		["Kaldheim (KHM)", "khm", ["Kaldheim"]],
 		["Kaldheim Commander Decks (KHC)", "khc", ["Kaldheim Commander Decks", "Kaldheim Commander"]],
 		["Time Spiral Remastered (TSR)", "tsr", ["Time Spiral Remastered"]],
-		["Strixhaven: School of Mages (STX)", "sta", ["Strixhaven: School of Mages"]],
+		["Strixhaven: School of Mages (STX)", "stx", ["Strixhaven: School of Mages"]],
 		["Mystical Archive (STA)", "sta", ["Mystical Archive", "Strixhaven Mystical Archive"]],
 		["Commander 2021 (C21)", "c21", ["Commander 2021"]],
 		["Modern Horizons II (MH2)", "mh2", ["Modern Horizons II", "Modern Horizons 2"]],
@@ -274,7 +274,7 @@
 		["Phyrexia: All Will Be One (ONE)", "one", ["Phyrexia: All Will Be One", "All Will Be One"]],
 		["Phyrexia: All Will Be One Commander Decks (ONC)", "onc", ["Phyrexia: All Will Be One Commander Decks", "Phyrexia: All Will Be One Commander", "All Will Be One Commander Decks", "All Will Be One Commander"]],
 		["March of the Machine (MOM)", "mom", ["March of the Machine"]],
-		// ["Multiverse Legends (MUL)", "mul", ["Multiverse Legends"]],
+		["Multiverse Legends (MUL)", "mul", ["Multiverse Legends"]],
 		["March of the Machine Commander Decks (MOC)", "moc", ["March of the Machine Commander Decks", "March of the Machine Commander"]],
 		["March of the Machine: The Aftermath (MAT)", "mat", ["March of the Machine: The Aftermath"]],
 		["The Lord of The Rings: Tales of Middle-Earth (LTR)", "ltr", ["The Lord of The Rings: Tales of Middle-Earth", "LoTR: Tales of Middle-Earth", "The Lord of the Rings", "Lord of the Rings", "LoTR", "Tales of Middle-Earth"]],
@@ -305,12 +305,32 @@
 		["Mystery Booster 2 (MB2)", "mb2", ["Mystery Booster 2"]],
 		["Duskmourn: House of Horror (DSK)", "dsk", ["Duskmourn: House of Horror", "Duskmourn"]],
 		["Duskmourn: House of Horror Commander Decks (DSC)", "dsc", ["Duskmourn: House of Horror Commander Decks", "Duskmourn: House of Horror Commander", "Duskmourn Commander Decks", "Duskmourn Commander"]],
-		//["Magic: The Gathering Foundations (FDN)", "fdn", ["Magic: The Gathering Foundations", "Foundations"]],
-		//["Magic: The Gathering Foundations Starter Collection (FDC)", "fdc", ["Magic: The Gathering Foundations Starter Collection", "Foundations Starter Collection", "Magic: The Gathering Foundations Commander", "Foundations Commander"]],
-		//["Foundations Jumpstart (J25)", "j25", ["Foundations Jumpstart"]],
-		//["Innistrad Remastered (INR)", "inr", ["Innistrad Remastered"]],
-		//["Aetherdrift (DFT)", "dft", ["Aetherdrift"]]
+		["Magic: The Gathering Foundations (FDN)", "fdn", ["Magic: The Gathering Foundations", "Foundations"]],
+		["Magic: The Gathering Foundations Starter Collection (FDC)", "fdc", ["Magic: The Gathering Foundations Starter Collection", "Foundations Starter Collection", "Magic: The Gathering Foundations Commander", "Foundations Commander"]],
+		["Foundations Jumpstart (J25)", "j25", ["Foundations Jumpstart"]],
+		["Innistrad Remastered (INR)", "inr", ["Innistrad Remastered"]],
+		["Aetherdrift (DFT)", "dft", ["Aetherdrift"]]
 	];
+	
+	let current_index = 0;
+	let score = 0;
+	
+	const image_box = document.createElement("IMG");
+	image_box.setAttribute("class", "set_image");
+	
+	const enter_button = document.createElement("BUTTON");
+	enter_button.textContent = "Submit";
+	enter_button.onclick = function() {answer_submitted();};
+	
+	const correct_answer = document.createElement("B");
+	
+	const text_box = document.createElement("INPUT");
+	text_box.setAttribute("type","text");
+	text_box.addEventListener("keydown", function (event) {
+		if (event.key == "Enter") {
+			enter_button.click();
+		}
+	});
 	
 	function shuffle(array) {
 		for (let i = array.length - 1; i > 0; i--) {
@@ -320,16 +340,61 @@
 		}
 	}
 	
-	shuffle(set_list);
+	function start_quiz() {
+		shuffle(set_list);
+		score = 0;
+		current_index = 0;
+		const startbutton = document.getElementById("start_button");
+		startbutton.remove();
+		document.body.appendChild(image_box);
+		document.body.appendChild(correct_answer);
+		document.body.appendChild(text_box);
+		document.body.appendChild(enter_button);
+		new_question();
+	}
 	
-	const set_name = document.createElement("b");
-	set_name.innerText = set_list[0][0];
-	document.body.appendChild(set_name);
+	function answer_submitted(){
+		correct_answer.textContent = set_list[current_index][0];
+		correct_answer.style.display = "";
+		const answer = text_box.value;
+		text_box.value = "";
+		let is_correct = false;
+		for (let i = 0; i < set_list[current_index][2].length; i++) {
+			if (set_list[current_index][2][i].replace(/[^a-zA-Z0-9]/g,'').toUpperCase() == answer.replace(/[^a-zA-Z0-9]/g,'').toUpperCase()) {
+				is_correct = true;
+				break;
+			}
+		}
+		if (is_correct == true) {
+			score++;
+			correct_answer.style.color = "green";
+		} else {
+			correct_answer.style.color = "red";
+		}
+		setTimeout(function() {
+			if (current_index == set_list.length - 1) {
+				finish_quiz();
+			} else {
+				current_index++;
+				new_question();
+			}
+		}, 2000);
+	}
 	
-	const set_symbol = document.createElement("img");
-	set_symbol.src = `images/${set_list[0][1]}.svg`;
-	document.body.appendChild(set_symbol);
+	function new_question() {
+		correct_answer.style.display = "none";
+		image_box.setAttribute("src", `images/${set_list[current_index][1]}.svg`);
+	}
 	
+	function finish_quiz() {
+		image_box.style.display = "none";
+		correct_answer.style.display = "none";
+		text_box.style.display = "none";
+		enter_button.style.display = "none";
+		const final_score = document.createElement("h2");
+		final_score.textContent = `${score}/${set_list.length}`;
+		document.body.appendChild(final_score);
+	}
 	</script>
 </body>
 </html>
