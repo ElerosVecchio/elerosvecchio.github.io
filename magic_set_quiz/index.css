@@ -24,6 +24,7 @@ body {
 .set_image {
 	margin: auto;
 	width: 20%;
+	max-height: 25vh;
 	background: white;
 	border-radius: 10px;
 	padding: 5px;
@@ -31,7 +32,8 @@ body {
 }
 
 #correct_answer_box {
-	margin: 20px;
+	margin: 20px auto ;
+	width: 55%;
 	display: block;
 	padding: 20px;
 	border-radius: 20px;

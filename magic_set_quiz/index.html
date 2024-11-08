@@ -364,8 +364,8 @@
 		current_index = 0;
 		progress_text.textContent = `${current_index}/${set_list.length}`;
 		quiz_div.appendChild(progress_text);
-		quiz_div.appendChild(image_box);
 		quiz_div.appendChild(correct_answer);
+		quiz_div.appendChild(image_box);
 		quiz_div.appendChild(text_box);
 		quiz_div.appendChild(enter_button);
 		new_question();
@@ -377,7 +377,6 @@
 		}
 		can_submit = false;
 		correct_answer.textContent = set_list[current_index][0];
-		correct_answer.style.display = "";
 		const answer = text_box.value;
 		text_box.value = "";
 		let is_correct = false;
@@ -404,8 +403,9 @@
 	}
 	
 	function new_question() {
+		correct_answer.textContent = "?";
+		correct_answer.style.backgroundColor = "white";
 		progress_text.textContent = `${current_index}/${set_list.length}`;
-		correct_answer.style.display = "none";
 		image_box.setAttribute("src", `images/${set_list[current_index][1]}.svg`);
 		can_submit = true;
 	}
